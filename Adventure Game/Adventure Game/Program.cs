@@ -56,10 +56,6 @@ namespace Adventure_Game
                         {
                             Console.WriteLine("You can't move north in this location.");
                         }
-                        if (location == "")
-                        {
-
-                        }
                     }
                     else if (choice[1] == "south")
                     {
