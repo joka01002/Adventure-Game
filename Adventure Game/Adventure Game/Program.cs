@@ -56,12 +56,49 @@ namespace Adventure_Game
                         {
                             Console.WriteLine("You can't move north in this location.");
                         }
+                        else if (location == "hall")
+                        {
+                            location = "kitchen";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "tower")
+                        {
+                            location = "washroom";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "livingroom")
+                        {
+                            location = "hall";
+                            Console.WriteLine("");
+                        }
                     }
                     else if (choice[1] == "south")
                     {
                         if (location == "livingroom" || location == "porch" || location == "pantry" || location == "tower")
                         {
                             Console.WriteLine("You can't move south in this location.");
+                        }
+                        else if (location == "washroom")
+                        {
+                            if (hiddenroom)
+                            {
+                                location = "tower";
+                                Console.WriteLine("");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You don't seem to be able to move in that direction");
+                            }
+                        }
+                        else if (location == "hall")
+                        {
+                            location = "livingroom";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "kitchen")
+                        {
+                            location = "hall";
+                            Console.WriteLine("");
                         }
                     }
                     else if (choice[1] == "east")
@@ -70,12 +107,52 @@ namespace Adventure_Game
                         {
                             Console.WriteLine("You can't move east in this location.");
                         }
+                        else if (location == "pantry")
+                        {
+                            location = "kitchen";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "kitchen")
+                        {
+                            location = "porch";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "washroom")
+                        {
+                            location = "hall";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "hall")
+                        {
+                            location = "doghouse";
+                            Console.WriteLine("");
+                        }
                     }
                     else if (choice[1] == "west")
                     {
                         if (location == "livingroom" || location == "tower" || location == "washroom" || location == "pantry")
                         {
                             Console.WriteLine("You can't move west in this location.");
+                        }
+                        else if (location == "doghouse")
+                        {
+                            location = "hall";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "hall")
+                        {
+                            location = "washroom";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "porch")
+                        {
+                            location = "kitchen";
+                            Console.WriteLine("");
+                        }
+                        else if (location == "kitchen")
+                        {
+                            location = "pantry";
+                            Console.WriteLine("");
                         }
                     }
                 }
@@ -89,13 +166,13 @@ namespace Adventure_Game
                                 "The dog writhes in pain until it finally stops moving." +
                                 "You can now move forward but with a bad feeling in your heart");
                         }
-                        if (choice[1] == "rusty" && choice[2] == "knife")
+                        else if (choice[1] == "rusty" && choice[2] == "knife")
                         {
                             Console.WriteLine("You need to pass through and stab the knife right into its chest." +
                                 "The dog writhes in pain until it finally stops moving." +
                                 "You can now move forward but with a bad feeling in your heart");
                         }
-                        if (choice[1] == "meat")
+                        else if (choice[1] == "meat")
                         {
                             Console.WriteLine("You reach out the meat towards the dog." +
                                 "It takes a while but the dog takes the meat and devours it." +
