@@ -21,12 +21,13 @@ namespace Adventure_Game
             Console.WriteLine("You awaken in a broken down house. " +
             "The only thing on your body are some old rags. Who are you? What happened here? How did you get here? " +
             "You choose to embark on a jouney to find answers to your questions. But where do you start?");
-            
-            while(play)
+            Kitchen();
+
+            while (play)
             {
                 string command = Console.ReadLine().ToLower();
                 string[] choice = command.Split(' ');
-                if(choice[0] == "help")
+                if (choice[0] == "help")
                 {
                     Console.WriteLine("To move write 'go' followed by direction, 'north', 'south', 'east' or 'west'.");
                     Console.WriteLine("To view inventory write 'inventory'.");
@@ -36,15 +37,15 @@ namespace Adventure_Game
                     Console.WriteLine("To pick up items write 'take' followed by the item.");
                     Console.WriteLine("To use an item in inventory write 'use' followed by the item.");
                 }
-                else if(choice[0] == "inventory")
+                else if (choice[0] == "inventory")
                 {
                     Console.WriteLine("These are the following items that you currently own.");
-                    foreach(string i in items)
+                    foreach (string i in items)
                     {
                         Console.WriteLine(i);
                     }
                 }
-                else if(choice[0] == "quit" || choice[0] == "end")
+                else if (choice[0] == "quit" || choice[0] == "end")
                 {
                     play = false;
                 }
@@ -59,17 +60,17 @@ namespace Adventure_Game
                         else if (location == "hall")
                         {
                             location = "kitchen";
-                            Console.WriteLine("");
+                            Kitchen();
                         }
                         else if (location == "tower")
                         {
                             location = "washroom";
-                            Console.WriteLine("");
+                            Washroom();
                         }
                         else if (location == "livingroom")
                         {
                             location = "hall";
-                            Console.WriteLine("");
+                            Hall();
                         }
                     }
                     else if (choice[1] == "south")
@@ -83,7 +84,7 @@ namespace Adventure_Game
                             if (hiddenroom)
                             {
                                 location = "tower";
-                                Console.WriteLine("");
+                                Tower();
                             }
                             else
                             {
@@ -93,12 +94,12 @@ namespace Adventure_Game
                         else if (location == "hall")
                         {
                             location = "livingroom";
-                            Console.WriteLine("");
+                            Livingroom();
                         }
                         else if (location == "kitchen")
                         {
                             location = "hall";
-                            Console.WriteLine("");
+                            Hall();
                         }
                     }
                     else if (choice[1] == "east")
@@ -110,22 +111,22 @@ namespace Adventure_Game
                         else if (location == "pantry")
                         {
                             location = "kitchen";
-                            Console.WriteLine("");
+                            Kitchen();
                         }
                         else if (location == "kitchen")
                         {
                             location = "porch";
-                            Console.WriteLine("");
+                            Porch();
                         }
                         else if (location == "washroom")
                         {
                             location = "hall";
-                            Console.WriteLine("");
+                            Hall();
                         }
                         else if (location == "hall")
                         {
                             location = "doghouse";
-                            Console.WriteLine("");
+                            Doghouse();
                         }
                     }
                     else if (choice[1] == "west")
@@ -137,22 +138,22 @@ namespace Adventure_Game
                         else if (location == "doghouse")
                         {
                             location = "hall";
-                            Console.WriteLine("");
+                            Hall();
                         }
                         else if (location == "hall")
                         {
                             location = "washroom";
-                            Console.WriteLine("");
+                            Washroom();
                         }
                         else if (location == "porch")
                         {
                             location = "kitchen";
-                            Console.WriteLine("");
+                            Kitchen();
                         }
                         else if (location == "kitchen")
                         {
                             location = "pantry";
-                            Console.WriteLine("");
+                            Pantry();
                         }
                     }
                 }
@@ -180,8 +181,8 @@ namespace Adventure_Game
                                 "You've gained a companion and of corse it needs a name." +
                                 "What is it's name?");
                             string name = Console.ReadLine();
-                            items.Add(name + "the Dog");
-                            items.Remove("meat");
+                            items.Add(name + " the Dog");
+                            items.Remove("rotten meat");
                         }
                     }
                     if (location == "washroom")
@@ -190,6 +191,7 @@ namespace Adventure_Game
                         {
                             Console.WriteLine("");
                             hiddenroom = true;
+                            items.Remove("flour");
                         }
                     }
                 }
@@ -214,7 +216,7 @@ namespace Adventure_Game
                             Console.WriteLine("This meat does not look appetizing" +
                                 "You definitely don't want to eat it but something else might");
                             items.Add("Rotten meat");
-                        }  
+                        }
                     }
                     if (location == "pantry")
                     {
@@ -232,6 +234,40 @@ namespace Adventure_Game
                     Console.WriteLine("Incorrect command.");
                 }
             }
+        }
+
+        static void Kitchen()
+        {
+            Console.WriteLine("You are in the kitchen. As you look around you see a fridge, stove, table" +
+                "To the west of you there is a pantry, to the east a porch and to the south is the hall");
+        }
+        static void Porch()
+        {
+            Console.WriteLine("You arrive in a dusty porch");
+        }
+        static void Pantry()
+        {
+            Console.WriteLine("You walk into the pantry. There seems to be mold growing on the walls");
+        }
+        static void Hall()
+        {
+            Console.WriteLine("Walking into the hall you see four ways to move forwards.");
+        }
+        static void Livingroom()
+        {
+            Console.WriteLine("You are in the living room. ");
+        }
+        static void Washroom()
+        {
+            Console.WriteLine("Standing in the dim light of the washroom");
+        }
+        static void Tower()
+        {
+            Console.WriteLine("Walking into this dusty tower you see the tall stairs going up.");
+        }
+        static void Doghouse()
+        {
+            Console.WriteLine("Walking towards the lonely doghouse");
         }
     }
 }
