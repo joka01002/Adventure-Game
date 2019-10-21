@@ -59,15 +59,24 @@ namespace Adventure_Game
                     }
                     else if (choice[1] == "south")
                     {
-
+                        if (location == "livingroom" || location == "porch" || location == "pantry" || location == "tower")
+                        {
+                            Console.WriteLine("You can't move south in this location.");
+                        }
                     }
                     else if (choice[1] == "east")
                     {
-
+                        if (location == "porch" || location == "livingroom" || location == "tower")
+                        {
+                            Console.WriteLine("You can't move east in this location.");
+                        }
                     }
                     else if (choice[1] == "west")
                     {
-
+                        if (location == "livingroom" || location == "tower" || location == "washroom" || location == "pantry")
+                        {
+                            Console.WriteLine("You can't move west in this location.");
+                        }
                     }
                 }
                 else if (choice[0] == "use")
