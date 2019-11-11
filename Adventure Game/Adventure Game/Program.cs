@@ -224,6 +224,62 @@ namespace Adventure_Game
                         }
                     }
                 }
+                else if (choice[0] == "search")
+                {
+                    if (location == "kitchen")
+                    {
+                        if (choice[1] == "fridge")
+                        {
+                            Console.WriteLine("");
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                        }
+                    }
+                    else if (location == "porch")
+                    {
+                        if (choice[1] == "safe")
+                        {
+                            Console.WriteLine("");
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                        }
+                    }
+                    else if (location == "pantry")
+                    {
+                        Console.WriteLine("");
+                    }
+                    else if (location == "hall")
+                    {
+                        if (choice[1] == "wardrobe")
+                        {
+                            Console.WriteLine("");
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                        }
+                    }
+                    else if (location == "livingroom")
+                    {
+                        Console.WriteLine("");
+                    }
+                    else if (location == "washroom")
+                    {
+                        Console.WriteLine("");
+                    }
+                    else if (location == "tower")
+                    {
+                        Console.WriteLine("");
+                    }
+                    else if (location == "doghouse")
+                    {
+                        Console.WriteLine("");
+                    }
+                }
                 else
                 {
                     Console.WriteLine("Incorrect command.");
