@@ -16,7 +16,7 @@ namespace Adventure_Game
             string location = "kitchen";
             Console.WriteLine("Welcome to this adventure game");
             Console.WriteLine("if you need help write 'help'");
-            Console.WriteLine("To start the game press any button");
+            Console.WriteLine("To start the game press enter");
             Console.ReadLine();
             Console.WriteLine("You awaken in a broken down house. " +
             "The only thing on your body are some old rags. Who are you? What happened here? How did you get here? " +
@@ -29,13 +29,7 @@ namespace Adventure_Game
                 string[] choice = command.Split(' ');
                 if (choice[0] == "help")
                 {
-                    Console.WriteLine("To move write 'go' followed by direction, 'north', 'south', 'east' or 'west'.");
-                    Console.WriteLine("To view inventory write 'inventory'.");
-                    Console.WriteLine("To quit the game write 'quit' or 'end'.");
-                    Console.WriteLine("To look around the place write 'search'.");
-                    Console.WriteLine("To search specific places write 'search' followed by location.");
-                    Console.WriteLine("To pick up items write 'take' followed by the item.");
-                    Console.WriteLine("To use an item in inventory write 'use' followed by the item.");
+                    Help();
                 }
                 else if (choice[0] == "inventory")
                 {
@@ -189,7 +183,8 @@ namespace Adventure_Game
                     {
                         if (choice[1] == "flour")
                         {
-                            Console.WriteLine("");
+                            Console.WriteLine("You have found a hidden door, " +
+                                "which seems to go to an old tower.");
                             hiddenroom = true;
                             items.Remove("flour");
                         }
@@ -235,7 +230,16 @@ namespace Adventure_Game
                 }
             }
         }
-
+        static void Help()
+        {
+            Console.WriteLine("To move write 'go' followed by direction, 'north', 'south', 'east' or 'west'.");
+            Console.WriteLine("To view inventory write 'inventory'.");
+            Console.WriteLine("To quit the game write 'quit' or 'end'.");
+            Console.WriteLine("To look around the place write 'search'.");
+            Console.WriteLine("To search specific places write 'search' followed by location.");
+            Console.WriteLine("To pick up items write 'take' followed by the item.");
+            Console.WriteLine("To use an item in inventory write 'use' followed by the item.");
+        }
         static void Kitchen()
         {
             Console.WriteLine("You are in the kitchen. As you look around you see a fridge, stove, table" +
