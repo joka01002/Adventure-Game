@@ -161,12 +161,6 @@ namespace Adventure_Game
                                 "The dog writhes in pain until it finally stops moving." +
                                 "You can now move forward but with a bad feeling in your heart");
                         }
-                        else if (choice[1] == "rusty" && choice[2] == "knife")
-                        {
-                            Console.WriteLine("You need to pass through and stab the knife right into its chest." +
-                                "The dog writhes in pain until it finally stops moving." +
-                                "You can now move forward but with a bad feeling in your heart");
-                        }
                         else if (choice[1] == "meat")
                         {
                             Console.WriteLine("You reach out the meat towards the dog." +
@@ -195,12 +189,6 @@ namespace Adventure_Game
                     if (location == "kitchen")
                     {
                         if (choice[1] == "knife")
-                        {
-                            Console.WriteLine("You pick up the rusty knife, " +
-                                "it's not that sharp but could probably kill something if needed");
-                            items.Add("Rusty Knife");
-                        }
-                        if (choice[1] == "rusty" && choice[2] == "knife")
                         {
                             Console.WriteLine("You pick up the rusty knife, " +
                                 "it's not that sharp but could probably kill something if needed");
